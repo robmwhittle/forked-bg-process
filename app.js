@@ -26,7 +26,7 @@ async function runLongTaskForked() {
         const forked = fork('longTaskForked.js');
         forked.send(limit);
         forked.on('message', (response) => {
-            console.log(response);
+            console.log("SUM IS: " + response);
             forked.kill();
         });
       } catch (err) {
